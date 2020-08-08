@@ -21,15 +21,12 @@ const updateUI = (data) => {
     `; 
 
     //update the night/day & icon images
-    const iconSrc = `img/icons/${weather.WetherIcon}.svg`
+    const iconSrc = `img/icons/${weather.WeatherIcon}.svg`;
     icon.setAttribute('src', iconSrc);
 
-    let timeSrc = null; //use let because it needs to be overriden
-    if(weather.IsDayTime) {
-        timeSrc = 'img/day.svg';
-    } else {
-        timeSrc = 'img/night.svg';
-    }
+    let timeSrc = weather.IsDayTime ? 'img/day.svg' : 'img/night.svg'; //use let because it needs to be overriden
+
+    
 
     time.setAttribute('src', timeSrc);
 
